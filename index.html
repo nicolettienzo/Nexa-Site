@@ -11,8 +11,8 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Nexa Machine" />
   <meta property="og:description" content="Máquinas CNC para aumentar a produtividade da sua empresa." />
-  <meta property="og:image" content="https://seusite.com.br/NEXA.png" />
-  <meta property="og:url" content="https://seusite.com.br" />
+  <meta property="og:image" content="https://nexamachine.com.br/NEXA.png" />
+  <meta property="og:url" content="https://nexamachine.com.br" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -1123,17 +1123,6 @@ if (statsSection) statsObserver.observe(statsSection);
       setTimeout(() => { formFeedback.style.display = 'none'; }, 6000);
     });
   }
-
-  // ── FAQ accordion ──
-  document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-      const item = question.parentElement;
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-
   // ── Cookies banner ──
   function aceitarCookies() {
     localStorage.setItem('cookieConsent', 'accepted');
@@ -1150,6 +1139,17 @@ if (statsSection) statsObserver.observe(statsSection);
   }
 </script>
 
-<script src="nexa.js"></script>
+<script src="nexa.js">
+   // ── FAQ accordion ──
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
 </body>
 </html>
