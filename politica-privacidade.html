@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade, LGPD e Termos de Uso | Nexa</title>
+  <meta name="description" content="Política de Privacidade, conformidade com a LGPD e Termos de Uso da Nexa Máquinas e Soluções Industriais." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000000;
+      --card: rgba(255,255,255,0.04);
+      --line: rgba(255,255,255,0.07);
+      --text: #ffffff;
+      --muted: #a9a9a9;
+      --primary: #ff6a00;
+      --primary-2: #ff8a1f;
+      --radius: 20px;
+      --container: 860px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255,106,0,0.08), transparent 30%),
+        #000;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(0,0,0,0.80);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: #fff;
+      height: 100px; width: auto; 
+    }
+    .logo span { color: var(--primary); }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: #ccc;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: .3s;
+    }
+    .back-btn:hover { color: #fff; border-color: rgba(255,255,255,0.2); text-decoration: none; }
+
+    /* Hero do documento */
+    .doc-hero {
+      padding: 140px 0 60px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 60px;
+    }
+
+    .doc-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255,106,0,0.10);
+      border: 1px solid rgba(255,106,0,0.25);
+      color: #ffb57d;
+      font-size: .8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .doc-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .doc-hero h1 span {
+      background: linear-gradient(135deg, #fff, var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .doc-meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-top: 16px;
+    }
+
+    /* Índice */
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+
+    .toc h2 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px 24px;
+      counter-reset: toc;
+    }
+
+    .toc ol li {
+      counter-increment: toc;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .toc ol li::before {
+      content: counter(toc, decimal-leading-zero);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.78rem;
+      min-width: 24px;
+    }
+
+    .toc ol li a {
+      color: #ccc;
+      transition: .2s;
+    }
+    .toc ol li a:hover { color: #fff; text-decoration: none; }
+
+    /* Seções do documento */
+    .doc-section {
+      margin-bottom: 56px;
+      scroll-margin-top: 100px;
+    }
+
+    .doc-section h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: rgba(255,106,0,0.12);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .doc-section h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #e0e0e0;
+      margin: 24px 0 10px;
+    }
+
+    .doc-section p {
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .doc-section ul, .doc-section ol {
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding-left: 20px;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .doc-section ul li::marker { color: var(--primary); }
+
+    .highlight-box {
+      background: rgba(255,106,0,0.06);
+      border: 1px solid rgba(255,106,0,0.18);
+      border-left: 3px solid var(--primary);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      color: #d0a080;
+      font-size: 0.92rem;
+    }
+
+    .info-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .info-box p {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+
+    /* Separador entre documentos */
+    .doc-divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 70px 0;
+      position: relative;
+    }
+
+    .doc-divider::after {
+      content: attr(data-label);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #000;
+      padding: 6px 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      border: 1px solid rgba(255,106,0,0.20);
+      border-radius: 999px;
+    }
+
+    /* Contato */
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-top: 20px;
+    }
+
+    .contact-card p { margin-bottom: 8px; }
+    .contact-card strong { color: #fff; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0;
+      text-align: center;
+      color: #555;
+      font-size: 0.82rem;
+      margin-top: 80px;
+    }
+
+    footer a { color: #666; }
+
+    @media (max-width: 600px) {
+      .toc ol { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="NEXA.png" height="100px" width="auto" alt="Nexa"></a>
+    <a href="index.html" class="back-btn">← Voltar ao site</a>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="doc-hero">
+      <div class="doc-badge">📄 Documentos Legais</div>
+      <h1>Política de Privacidade,<br><span>LGPD e Termos de Uso</span></h1>
+      <p style="color: var(--muted); max-width: 560px; margin-top: 14px;">
+        Este documento reúne as políticas e termos que regem o uso do site e dos serviços da Nexa Máquinas e Soluções Industriais.
+      </p>
+      <p class="doc-meta">
+        Última atualização: Janeiro de 2026 &nbsp;·&nbsp; Nexa Máquinas e Soluções Industriais
+      </p>
+    </div>
+
+    <!-- Índice -->
+    <div class="toc">
+      <h2>Índice</h2>
+      <ol>
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#dados-coletados">Dados Coletados</a></li>
+        <li><a href="#finalidade">Finalidade do Uso</a></li>
+        <li><a href="#compartilhamento">Compartilhamento</a></li>
+        <li><a href="#armazenamento">Armazenamento</a></li>
+        <li><a href="#direitos">Seus Direitos (LGPD)</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#termos">Termos de Uso</a></li>
+        <li><a href="#responsabilidades">Responsabilidades</a></li>
+        <li><a href="#contato-dpo">Contato e DPO</a></li>
+      </ol>
+    </div>
+
+    <!-- ===== POLÍTICA DE PRIVACIDADE ===== -->
+
+    <div class="doc-section" id="quem-somos">
+      <h2><span class="section-num">01</span> Quem Somos</h2>
+      <p>
+        A <strong style="color:#fff">Nexa Máquinas e Soluções Industriais</strong>, com sede em Indaiatuba, SP, é responsável pelo site
+        <strong style="color:#fff">www.nexa.com.br</strong> e pelos dados pessoais coletados por meio dele.
+      </p>
+      <p>
+        Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos os dados pessoais dos
+        visitantes e clientes, em conformidade com a <strong style="color:#fff">Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>.
+      </p>
+      <div class="highlight-box">
+        <p>
+          Ao utilizar nosso site ou preencher qualquer formulário, você concorda com as práticas descritas neste documento.
+          Se não concordar, recomendamos que não utilize nossos serviços online.
+        </p>
+      </div>
+    </div>
+
+    <div class="doc-section" id="dados-coletados">
+      <h2><span class="section-num">02</span> Dados Coletados</h2>
+      <p>Coletamos dados pessoais apenas quando você os fornece voluntariamente, nas seguintes situações:</p>
+
+      <h3>Formulário de Orçamento e Contato</h3>
+      <ul>
+        <li>Nome completo</li>
+        <li>Nome da empresa</li>
+        <li>Endereço de e-mail</li>
+        <li>Número de telefone</li>
+        <li>Assunto e mensagem descritos pelo usuário</li>
+      </ul>
+
+      <h3>Formulário de Download de Catálogo</h3>
+      <ul>
+        <li>Nome completo</li>
+        <li>Endereço de e-mail</li>
+        <li>Número de telefone</li>
+      </ul>
+
+      <h3>Dados coletados automaticamente</h3>
+      <ul>
+        <li>Endereço IP (anonimizado)</li>
+        <li>Tipo de navegador e dispositivo</li>
+        <li>Páginas visitadas e tempo de navegação (via cookies analíticos)</li>
+      </ul>
+    </div>
+
+    <div class="doc-section" id="finalidade">
+      <h2><span class="section-num">03</span> Finalidade do Uso dos Dados</h2>
+      <p>Utilizamos seus dados exclusivamente para as seguintes finalidades:</p>
+      <ul>
+        <li>Responder às suas solicitações de orçamento e atendimento</li>
+        <li>Enviar o catálogo de produtos solicitado</li>
+        <li>Entrar em contato para dar continuidade ao atendimento comercial</li>
+        <li>Melhorar a experiência de navegação no site</li>
+        <li>Cumprir obrigações legais e regulatórias</li>
+      </ul>
+      <div class="info-box">
+        <p style="color: var(--muted);">
+          <strong style="color:#fff">Não enviamos spam.</strong> Seus dados não serão usados para envio de e-mails
+          promocionais ou newsletters sem o seu consentimento explícito.
+        </p>
+      </div>
+    </div>
+
+    <div class="doc-section" id="compartilhamento">
+      <h2><span class="section-num">04</span> Compartilhamento de Dados</h2>
+      <p>
+        A Nexa <strong style="color:#fff">não vende, aluga ou comercializa</strong> seus dados pessoais com terceiros.
+      </p>
+      <p>Podemos compartilhar dados apenas nas seguintes situações:</p>
+      <ul>
+        <li><strong style="color:#fff">Prestadores de serviço:</strong> empresas de hospedagem, plataformas de e-mail e ferramentas de análise que nos auxiliam na operação do site, sempre sob contrato de confidencialidade</li>
+        <li><strong style="color:#fff">Obrigação legal:</strong> quando exigido por lei, decisão judicial ou autoridade competente</li>
+        <li><strong style="color:#fff">Proteção de direitos:</strong> para proteger os direitos, propriedade ou segurança da Nexa e de seus clientes</li>
+      </ul>
+    </div>
+
+    <div class="doc-section" id="armazenamento">
+      <h2><span class="section-num">05</span> Armazenamento e Segurança</h2>
+      <p>
+        Seus dados são armazenados em servidores seguros e mantidos pelo tempo necessário para cumprir
+        as finalidades descritas nesta política ou conforme exigido por lei.
+      </p>
+      <ul>
+        <li>Dados de orçamento e contato: armazenados por até <strong style="color:#fff">5 anos</strong></li>
+        <li>Dados de download de catálogo: armazenados por até <strong style="color:#fff">2 anos</strong></li>
+        <li>Logs de acesso: armazenados por <strong style="color:#fff">6 meses</strong>, conforme o Marco Civil da Internet</li>
+      </ul>
+      <p>
+        Adotamos medidas técnicas e organizacionais para proteger seus dados contra acesso não autorizado,
+        perda, alteração ou divulgação indevida.
+      </p>
+    </div>
+
+    <hr class="doc-divider" data-label="LGPD">
+
+    <!-- ===== LGPD ===== -->
+
+    <div class="doc-section" id="direitos">
+      <h2><span class="section-num">06</span> Seus Direitos pela LGPD</h2>
+      <p>
+        A Lei Geral de Proteção de Dados (Lei nº 13.709/2018) garante a você os seguintes direitos
+        sobre seus dados pessoais:
+      </p>
+
+      <h3>Direito de Acesso</h3>
+      <p>Você pode solicitar a confirmação da existência de tratamento e o acesso aos seus dados pessoais.</p>
+
+      <h3>Direito de Correção</h3>
+      <p>Você pode solicitar a correção de dados incompletos, inexatos ou desatualizados.</p>
+
+      <h3>Direito de Exclusão</h3>
+      <p>
+        Você pode solicitar a exclusão dos seus dados pessoais, salvo quando houver obrigação legal
+        de mantê-los ou interesse legítimo da empresa.
+      </p>
+
+      <h3>Direito de Portabilidade</h3>
+      <p>Você pode solicitar a transferência dos seus dados para outro fornecedor de serviço.</p>
+
+      <h3>Direito de Revogação do Consentimento</h3>
+      <p>
+        Você pode revogar seu consentimento a qualquer momento, sem prejuízo do tratamento
+        realizado anteriormente.
+      </p>
+
+      <h3>Direito de Oposição</h3>
+      <p>
+        Você pode se opor ao tratamento de dados baseado em legítimo interesse, quando entender
+        que os seus direitos fundamentais se sobrepõem.
+      </p>
+
+      <div class="highlight-box">
+        <p>
+          Para exercer qualquer um desses direitos, entre em contato pelo e-mail
+          <a href="mailto:contato@nexamachine.com.br">contato@nexamachine.com.br</a>.
+          Responderemos em até <strong>15 dias úteis</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="doc-section" id="cookies">
+      <h2><span class="section-num">07</span> Cookies</h2>
+      <p>
+        Nosso site utiliza cookies para melhorar a experiência de navegação. Cookies são pequenos
+        arquivos de texto armazenados no seu dispositivo.
+      </p>
+
+      <h3>Tipos de Cookies que Utilizamos</h3>
+      <ul>
+        <li><strong style="color:#fff">Cookies essenciais:</strong> necessários para o funcionamento básico do site</li>
+        <li><strong style="color:#fff">Cookies analíticos:</strong> nos ajudam a entender como os visitantes usam o site (ex: Google Analytics)</li>
+      </ul>
+
+      <p>
+        Você pode desativar os cookies nas configurações do seu navegador, mas isso pode afetar
+        o funcionamento de algumas funcionalidades do site.
+      </p>
+    </div>
+
+    <hr class="doc-divider" data-label="Termos de Uso">
+
+    <!-- ===== TERMOS DE USO ===== -->
+
+    <div class="doc-section" id="termos">
+      <h2><span class="section-num">08</span> Termos de Uso</h2>
+      <p>
+        Ao acessar e utilizar o site da Nexa, você concorda com os seguintes termos e condições.
+        Caso não concorde, pedimos que não utilize o site.
+      </p>
+
+      <h3>Propriedade Intelectual</h3>
+      <p>
+        Todo o conteúdo disponível neste site — incluindo textos, imagens, logotipos, vídeos,
+        layouts e demais elementos visuais — é de propriedade exclusiva da
+        <strong style="color:#fff">Nexa Máquinas e Soluções Industriais</strong> ou de seus licenciadores,
+        protegido pela legislação brasileira de direitos autorais (Lei nº 9.610/1998).
+      </p>
+      <p>
+        É proibida a reprodução, distribuição ou utilização de qualquer conteúdo sem autorização
+        prévia e expressa da Nexa.
+      </p>
+
+      <h3>Uso Permitido</h3>
+      <ul>
+        <li>Navegar pelo site para obter informações sobre produtos e serviços</li>
+        <li>Preencher formulários para solicitar orçamentos ou contato</li>
+        <li>Baixar materiais disponibilizados após fornecimento dos dados solicitados</li>
+      </ul>
+
+      <h3>Uso Proibido</h3>
+      <ul>
+        <li>Reproduzir ou copiar conteúdo sem autorização</li>
+        <li>Tentar acessar áreas restritas ou sistemas internos</li>
+        <li>Utilizar o site para fins ilegais ou que violem direitos de terceiros</li>
+        <li>Enviar informações falsas nos formulários</li>
+        <li>Realizar ataques, tentativas de invasão ou qualquer ação maliciosa</li>
+      </ul>
+    </div>
+
+    <div class="doc-section" id="responsabilidades">
+      <h2><span class="section-num">09</span> Responsabilidades e Limitações</h2>
+
+      <h3>Informações do Site</h3>
+      <p>
+        A Nexa se esforça para manter as informações do site precisas e atualizadas, porém não
+        garante a completude ou exatidão de todo o conteúdo. As especificações técnicas dos
+        produtos podem ser alteradas sem aviso prévio.
+      </p>
+
+      <h3>Links Externos</h3>
+      <p>
+        Este site pode conter links para sites de terceiros. A Nexa não se responsabiliza pelo
+        conteúdo, políticas de privacidade ou práticas de sites externos.
+      </p>
+
+      <h3>Disponibilidade do Site</h3>
+      <p>
+        A Nexa não garante a disponibilidade ininterrupta do site e não se responsabiliza por
+        eventuais indisponibilidades causadas por manutenção, falhas técnicas ou fatores externos.
+      </p>
+
+      <h3>Orçamentos e Negociações</h3>
+      <p>
+        As solicitações de orçamento feitas pelo site não constituem proposta comercial vinculante.
+        Os preços e condições são confirmados apenas após análise e resposta formal da equipe comercial da Nexa.
+      </p>
+
+      <h3>Alterações neste Documento</h3>
+      <p>
+        A Nexa reserva-se o direito de alterar esta política e estes termos a qualquer momento.
+        As alterações entram em vigor na data de publicação. Recomendamos a consulta periódica
+        deste documento.
+      </p>
+
+      <h3>Legislação Aplicável</h3>
+      <p>
+        Este documento é regido pela legislação brasileira. Fica eleito o foro da comarca de
+        <strong style="color:#fff">Indaiatuba, SP</strong>, para dirimir quaisquer controvérsias decorrentes
+        do uso do site ou dos serviços da Nexa.
+      </p>
+    </div>
+
+    <!-- Contato DPO -->
+    <div class="doc-section" id="contato-dpo">
+      <h2><span class="section-num">10</span> Contato e Encarregado de Dados (DPO)</h2>
+      <p>
+        Para dúvidas, solicitações sobre seus dados pessoais ou qualquer questão relacionada
+        a esta política, entre em contato:
+      </p>
+
+      <div class="contact-card">
+        <p><strong>Nexa Máquinas e Soluções Industriais</strong></p>
+        <p style="color: var(--muted);">Indaiatuba, São Paulo — Brasil</p>
+        <br>
+        <p>📧 <strong>E-mail geral:</strong> <a href="mailto:contato@nexamachine.com.br">contato@nexamachine.com.br</a></p>
+        <p>🔒 <strong>Privacidade / DPO:</strong> <a href="mailto:contato@nexamachine.com.br">contato@nexamachine.com.br</a></p>
+        <p>📞 <strong>Telefone:</strong> <a href="tel:+551933942700">(19) 3394-2700</a></p>
+        <br>
+        <p style="color: var(--muted); font-size: 0.88rem;">
+          Respondemos solicitações relacionadas a dados pessoais em até <strong style="color:#fff">15 dias úteis</strong>.
+        </p>
+      </div>
+
+      <div class="info-box" style="margin-top: 24px;">
+        <p style="color: var(--muted); font-size: 0.88rem;">
+          Você também pode registrar reclamações junto à
+          <strong style="color:#fff">Autoridade Nacional de Proteção de Dados (ANPD)</strong>
+          pelo site <a href="https://www.gov.br/anpd" target="_blank">www.gov.br/anpd</a>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Nexa Machine. Todos os direitos reservados.</p>
+    <p style="margin-top: 8px;"><a href="index.html">← Voltar ao site</a></p>
+  </div>
+</footer>
+
+<script>
+  // Destaca o item do índice conforme o scroll
+  const sections = document.querySelectorAll('.doc-section');
+  const tocLinks = document.querySelectorAll('.toc a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(link => {
+          link.style.color = link.getAttribute('href') === '#' + entry.target.id ? '#ff6a00' : '';
+        });
+      }
+    });
+  }, { threshold: 0.5, rootMargin: '-80px 0px 0px 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
