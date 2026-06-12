@@ -556,6 +556,38 @@
   </style>
 </head>
 <body>
+  
+  <!-- Loading Screen -->
+<div id="loadingScreen" style="
+  position: fixed; inset: 0; z-index: 999999;
+  background: #000;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity .6s ease, visibility .6s ease;
+">
+  <div style="text-align:center;">
+    <img src="NEXA.png" alt="Nexa Machine" style="width: 140px; margin-bottom: 24px; animation: pulseLogo 2.5s ease-in-out infinite;">
+    <div style="
+      width: 60px; height: 4px; margin: 0 auto;
+      background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden;
+    ">
+      <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #ff6a00, #ff8a1f); animation: loadBar 1.2s ease-in-out infinite;"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes pulseLogo {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .6; transform: scale(.95); }
+  }
+  @keyframes loadBar {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(0%); }
+    100% { transform: translateX(100%); }
+  }
+  #loadingScreen.hide { opacity: 0; visibility: hidden; }
+</style>
+
 
 <!-- WhatsApp flutuante -->
 <a href="https://wa.me/551997247498" target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
@@ -663,7 +695,7 @@
             Vendas realizadas
           </div>
           <div class="stat">
-            <strong data-target="24" data-prefix="-">-24h</strong>
+            <strong data-target="24" data-prefix="-" data-suffix="h">-24h</strong>
             Resposta rápida
           </div>
           <div class="stat">
@@ -773,8 +805,8 @@
         <p style="margin-bottom:30px;">Preencha seus dados para liberar o download do catálogo em PDF com todas as especificações das máquinas Nexa.</p>
         <form id="downloadForm" style="display:grid; gap:16px;">
           <input type="text" id="nomeDownload" placeholder="Seu nome" required style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%;">
-          <input type="email" id="emailDownload" placeholder="Seu e-mail" required style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%;">
-          <input type="tel" id="telefoneDownload" placeholder="Telefone" required style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%;">
+          <input type="email" id="emailDownload" placeholder="Seu e-mail" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="Digite um e-mail válido (ex: nome@dominio.com)" style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%;">
+          <input type="tel" id="telefoneDownload" placeholder="Telefone" required pattern="[0-9\s\(\)\-\+]{8,15}" inputmode="numeric" title="Digite apenas números" oninput="this.value=this.value.replace(/[^0-9\s\(\)\-\+]/g,'')" style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%;">
           <button type="submit" id="downloadBtn" class="btn btn-primary" style="justify-self:center; margin-top:10px;">
             Baixar Catálogo PDF
           </button>
@@ -783,6 +815,58 @@
       </div>
     </div>
   </section>
+  <!-- Banner Time de Vendas -->
+<div class="reveal" style="
+  margin: 60px auto 0;
+  max-width: 1240px;
+  background: linear-gradient(135deg, rgba(255,106,0,0.12), rgba(0,0,0,0.4)),
+              radial-gradient(circle at 15% 50%, rgba(255,106,0,0.18), transparent 60%);
+  border: 1px solid rgba(255,106,0,0.18);
+  border-radius: 28px;
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 28px;
+  backdrop-filter: blur(12px);
+">
+  <div style="display:flex; align-items:center; gap: 24px; flex: 1; min-width: 280px;">
+    <!-- Fotos sobrepostas -->
+    <div style="display:flex; flex-shrink:0;">
+      <img src="vendedorR.png" alt="Vendedor 1" style="
+        width: 56px; height: 56px; border-radius: 50%; object-fit: cover;
+        border: 2px solid #0a0a0a; box-shadow: 0 0 0 1px rgba(255,106,0,0.3);
+        margin-right: -16px; position: relative; z-index: 3;">
+      <img src="vendedorB.png" alt="Vendedor 2" style="
+        width: 56px; height: 56px; border-radius: 50%; object-fit: cover;
+        border: 2px solid #0a0a0a; box-shadow: 0 0 0 1px rgba(255,106,0,0.3);
+        margin-right: -16px; position: relative; z-index: 2;">
+      <img src="vendedorW.png" alt="Vendedor 3" style="
+        width: 56px; height: 56px; border-radius: 50%; object-fit: cover;
+        border: 2px solid #0a0a0a; box-shadow: 0 0 0 1px rgba(255,106,0,0.3);
+        position: relative; z-index: 1;">
+    </div>
+
+    <!-- Texto -->
+    <div>
+      <p style="
+        font-size: 0.72rem; font-weight: 700; letter-spacing: .15em;
+        color: var(--primary); text-transform: uppercase; margin-bottom: 8px;">
+        Não perca tempo
+      </p>
+      <h3 style="font-size: 1.3rem; font-weight: 800; line-height: 1.3; margin: 0; white-space: normal;">
+        Deseja comprar ou financiar uma máquina?
+      </h3>
+    </div>
+  </div>
+
+  <!-- Botão -->
+  <a href="https://wa.me/5519988066290" target="_blank" class="btn btn-primary" style="flex-shrink: 0; white-space: nowrap;">
+    Falar com o time de vendas
+    <i class="ti ti-arrow-right"></i>
+  </a>
+</div>
 
   <!-- Depoimentos -->
   <section id="depoimentos">
@@ -862,8 +946,8 @@
           <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; margin-bottom:20px;">
             <input type="text" name="nome" placeholder="Nome" required style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%;">
             <input type="text" name="empresa" placeholder="Empresa" style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%;">
-            <input type="email" name="email" placeholder="E-mail" required style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%;">
-            <input type="tel" name="telefone" placeholder="Telefone" required style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%;">
+            <input type="email" id="emailDownload" placeholder="Seu e-mail" required pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="Digite um e-mail válido (ex: nome@dominio.com)" style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%;">
+            <input type="tel" name="telefone" placeholder="Telefone" required pattern="[0-9\s\(\)\-\+]{8,15}" inputmode="numeric" title="Digite apenas números" oninput="this.value=this.value.replace(/[^0-9\s\(\)\-\+]/g,'')" style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%;">
           </div>
           <input type="text" name="assunto" placeholder="Assunto" style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%; margin-bottom:20px;">
           <textarea rows="6" name="mensagem" placeholder="Descreva sua necessidade" required style="padding:16px 20px; border-radius:14px; border:1px solid rgba(255,255,255,0.08); background:#0b0b0b; color:#fff; width:100%; resize:vertical; margin-bottom:20px;"></textarea>
@@ -963,6 +1047,13 @@
 </footer>
 
 <script>
+
+  window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loadingScreen').classList.add('hide');
+  }, 600);
+});
+
   // ── Reveal on scroll ──
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -999,38 +1090,29 @@
   updateNavCTA();
   window.addEventListener('resize', updateNavCTA);
 
- // ── Contador animado em loop (0 → número → 0 → ...) ──
+ // ── Contador animado
   function animateCounterLoop(el) {
-    const target = parseInt(el.getAttribute('data-target'));
-    const prefix = el.getAttribute('data-prefix') || '';
-    const suffix = el.getAttribute('data-suffix') || '';
-    if (!target) return;
+  const target = parseInt(el.getAttribute('data-target'));
+  const prefix = el.getAttribute('data-prefix') || '';
+  const suffix = el.getAttribute('data-suffix') || '';
+  if (!target) return;
 
-    const duration = 1800; // tempo de subida ou descida em ms
-    const interval = 16;   // ~60fps
-    const steps = Math.ceil(duration / interval);
-    let current = 0;
-    let goingUp = true;
+  const duration = 1800; // tempo da contagem em ms
+  const interval = 16;   // ~60fps
+  const steps = Math.ceil(duration / interval);
+  let current = 0;
 
+  el.textContent = prefix + Math.round(current) + suffix;
+
+  const timer = setInterval(() => {
+    current += target / steps;
+    if (current >= target) {
+      current = target;
+      clearInterval(timer);
+    }
     el.textContent = prefix + Math.round(current) + suffix;
-
-    setInterval(() => {
-      if (goingUp) {
-        current += target / steps;
-        if (current >= target) {
-          current = target;
-          goingUp = false;
-        }
-      } else {
-        current -= target / steps;
-        if (current <= 0) {
-          current = 0;
-          goingUp = true;
-        }
-      }
-      el.textContent = prefix + Math.round(current) + suffix;
-    }, interval);
-  }
+  }, interval);
+}
 
 const statsObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
