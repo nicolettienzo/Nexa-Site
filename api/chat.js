@@ -25,7 +25,7 @@ COMO RESPONDER:
 - Se não souber a resposta ou a pergunta estiver fora do escopo da Nexa, seja honesto e direcione para o WhatsApp ou e-mail.
 - Não responda sobre assuntos não relacionados à Nexa Machine ou seus produtos.`;
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'Método não permitido.' });
@@ -87,9 +87,3 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Erro interno ao processar sua mensagem.' });
   }
 }
-
-
-    // Abre o clicado (se não estava aberto)
-    if (!isOpen) item.classList.add('open');
-  });
-});
